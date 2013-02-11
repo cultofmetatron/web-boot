@@ -10,7 +10,7 @@ requirejs.config({
            },
     shim: {
                 Modernizr:['jQuery'],
-                Backbone: ['jQuery', 'Underscore']
+                Backbone: ['jQuery', 'Underscore'],
                 Application: ['Backbone']
 
            }
@@ -18,4 +18,5 @@ requirejs.config({
 
 require(['Application'], function(app) {
     app.init();
+   // alert('hello');
 })
