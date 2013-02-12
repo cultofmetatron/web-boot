@@ -1,10 +1,18 @@
-define([], function() {
+define(['views/index'], function(IndexView) {
 
     //declare the router
+    var router = Backbone.Router.extend({
+        routes: {
+                    '/':'index'
 
-        //routes go here
+                },
+        index: function() {
+
+        }
 
 
+    })
 
+    return new router();
 
 })
