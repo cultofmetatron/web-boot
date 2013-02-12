@@ -8,7 +8,9 @@ throw into a rich web application.
 
 TODOS
 
-    redirection to index template works now!!
+
+stock version should include copious comments and
+explanations on where to find further information
 
 
 *stylesheets powered by skeleton*
