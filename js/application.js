@@ -3,6 +3,8 @@ define(['router'], function(appRouter) {
     initialize = function() {
         console.log('app initialized');
 
+        Backbone.history.start();
+        appRouter.navigate('index', {trigger: true});
     }
 
 

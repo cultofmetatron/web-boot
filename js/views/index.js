@@ -1,5 +1,5 @@
 define(['text!templates/index.hbs'], function(indexTemplate) {
-    var indexView = Backbone.View.extend({
+    var IndexView = Backbone.View.extend({
         el:$('body'),
         render:function() {
             var compiledTemplate = Handlebars.compile(indexTemplate);
@@ -8,5 +8,7 @@ define(['text!templates/index.hbs'], function(indexTemplate) {
         }
 
     })
+
+    return IndexView;
 
 } )
