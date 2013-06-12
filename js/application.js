@@ -5,13 +5,13 @@ define(['router'], function(appRouter) {
 
         Backbone.history.start();
         appRouter.navigate('index', {trigger: true});
-    }
+    };
 
 
     return {
         init:initialize,
 
-    }
+    };
 
 
-})
+});

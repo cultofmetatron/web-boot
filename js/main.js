@@ -1,25 +1,41 @@
 requirejs.config({
     paths: {
-               jQuery:'/js/libs/jquery-1.9.1',
-               Underscore:'/js/libs/underscore',
-               Modernizr: '/js/libs/modernizr',
-               Backbone: '/js/libs/backbone',
-               Marionette: '/js/libs/backbone.marionette',
-               Handlebars: '/js/libs/handlebars',
+               jquery:'/js/libs/jquery-1.9.1',
+               underscore:'/js/libs/underscore',
+               modernizr: '/js/libs/modernizr',
+               backbone: '/js/libs/backbone',
+               marionette: '/js/backbone.marionette',
+               //'backbone.wreqr' : '/js/libs/backbone.wreqr',
+               //'backbone.babysitter': '/js/libs/backbone.babysitter',
+
+               handlebars: '/js/libs/handlebars',
                text: '/js/libs/text',
                cs: '/js/libs/cs',
                templates:'/templates'
            },
     shim: {
-                Modernizr:['jQuery'],
-                Backbone: ['jQuery', 'Underscore', 'Handlebars'],
-                Marionette: ['Backbone'],
-                Application: ['Marionette']
+                jquery: {
+                  exports: "jQuery"
+                },
+                underscore: {
+                  exports: '_'
+                },
+                modernizr:['jquery'],
+                backbone: {
+                  deps: ['jquery', 'underscore', 'handlebars'],
+                  exports: "Backbone"
+                },
+                marionette: {
+                  deps: ["backbone", "underscore"],
+                  exports: "Backbone.Marionette"
 
+                },
+                Application: ['marionette', 'modernizr']
            }
 });
 
 require(['Application'], function(app) {
+    console.log('this is marionette: ', '');
     app.init();
    // alert('hello');
 });
