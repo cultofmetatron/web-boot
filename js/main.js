@@ -4,6 +4,7 @@ requirejs.config({
                Underscore:'/js/libs/underscore',
                Modernizr: '/js/libs/modernizr',
                Backbone: '/js/libs/backbone',
+               Marionette: '/js/libs/backbone.marionette',
                Handlebars: '/js/libs/handlebars',
                text: '/js/libs/text',
                cs: '/js/libs/cs',
@@ -12,12 +13,13 @@ requirejs.config({
     shim: {
                 Modernizr:['jQuery'],
                 Backbone: ['jQuery', 'Underscore', 'Handlebars'],
-                Application: ['Backbone']
+                Marionette: ['Backbone'],
+                Application: ['Marionette']
 
            }
-})
+});
 
 require(['Application'], function(app) {
     app.init();
    // alert('hello');
-})
+});
